@@ -88,3 +88,12 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  assets :
+    - assets/defpic.png
+    - assets/brush.png
+    - assets/ve.png
+    - assets/har.png
+    - assets/home.png
+    - assets/trans.png
+    - assets/pro.png
+    - assets/broko.png
