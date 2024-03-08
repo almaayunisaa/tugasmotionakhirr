@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "894401803638",
+    "project_id": "latihan-917ef",
+    "storage_bucket": "latihan-917ef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:894401803638:android:cff04644c3359882b7b657",
+        "android_client_info": {
+          "package_name": "com.example.test1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAJkwNvvFhBFwiEsrJTKhjKb_Vf4OnGLI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:894401803638:android:90354b62814a9210b7b657",
+        "android_client_info": {
+          "package_name": "com.example.tugasmotionakhir"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAJkwNvvFhBFwiEsrJTKhjKb_Vf4OnGLI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

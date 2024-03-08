@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'page.dart';
 class Footer extends StatelessWidget {
   const Footer({super.key});
 
@@ -18,7 +19,15 @@ class Footer extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset('assets/home.png', width: 24, height: 24,),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => List())
+                  );
+                },
+                child: Image.asset('assets/home.png', width: 24, height: 24,),
+              ),
               SizedBox(width: 67,),
               Image.asset('assets/har.png', width: 24, height: 24,),
               SizedBox(width: 67,),
@@ -46,8 +55,8 @@ class Footer extends StatelessWidget {
   }
 }
 class Footer2 extends StatelessWidget {
-  const Footer2({super.key});
-
+  Footer2({Key? key, required this.id}) : super(key: key);
+  String id;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -71,7 +80,15 @@ class Footer2 extends StatelessWidget {
               SizedBox(width: 67,),
               Image.asset('assets/trans.png', width: 24, height: 24,),
               SizedBox(width: 67,),
-              Image.asset('assets/pro.png', width: 24, height: 24,),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Info(id: id)),
+                  );
+                },
+                child: Image.asset('assets/pro.png', width: 24, height: 24,),
+              )
             ],
           ),
           SizedBox(height: 4,),
@@ -93,13 +110,26 @@ class Footer2 extends StatelessWidget {
         Positioned(
             right: 183,
             bottom :20,
-            child: Icon(Icons.add_circle, size: 54, color: Color(0xFF62C172),))
+            child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+              context, 
+              MaterialPageRoute(builder: (context)=>Produk())
+              );
+            },
+            child: Icon(Icons.add_circle, size: 54, color: Color(0xFF62C172),)),
+            )
+
       ],
     );
   }
 }
 class KotakPro extends StatelessWidget {
-  const KotakPro({super.key});
+  KotakPro({Key? key, required this.nama, required this.status, required this.id}) : super(key: key);
+
+  String nama;
+  String status;
+  String id;
 
   @override
   Widget build(BuildContext context) {
@@ -116,41 +146,42 @@ class KotakPro extends StatelessWidget {
           Center(
             child: Image.asset('assets/broko.png', scale: 4,),
           ),
-          Container(
-              height: 96.5,
-              width: 164,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5.0),
-                color: Colors.white,
-              ),
-              padding: EdgeInsets.symmetric(
-                horizontal: 10.0
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(height: 11,),
-                   Text("Brokoli", style: TextStyle(fontSize: 13, fontWeight: FontWeight.w500, fontFamily: 'Poppins'),),
-                  SizedBox(height: 5.64,),
-                  Text("Proses", style: TextStyle(fontSize: 13, fontWeight: FontWeight.w500, fontFamily: 'Poppins', color: Color(0xFFF99500)),),
-                  SizedBox(height: 9,),
-                  Row(
+          Expanded(
+              child: Container(
+                  height: 96.5,
+                  width: 164,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5.0),
+                    color: Colors.white,
+                  ),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: 10.0
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(width: 75),
-                      Container(
-                        width: 68,
-                        height: 27.9,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(3.0),
-                          color: Color(0xFF74DA84),
-                        ),
-                        child: Center(child: Text("Detail", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, fontFamily: 'Poppins', color: Colors.white),)),
+                      SizedBox(height: 11,),
+                      Text(nama, style: TextStyle(fontSize: 13, fontWeight: FontWeight.w500, fontFamily: 'Poppins'),),
+                      SizedBox(height: 5.64,),
+                      Text(status, style: TextStyle(fontSize: 13, fontWeight: FontWeight.w500, fontFamily: 'Poppins', color: status == "Proses" ? Color(0xFFF99500) : Color(0xFF3AAE4E)),),
+                      SizedBox(height: 9,),
+                      Row(
+                        children: [
+                          SizedBox(width: 75),
+                          Container(
+                            width: 68,
+                            height: 27.9,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(3.0),
+                              color: Color(0xFF74DA84),
+                            ),
+                            child: Center(child: Text("Detail", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, fontFamily: 'Poppins', color: Colors.white),)),
+                          )
+                        ],
                       )
-                    ],
-                  )
-          ],))
-
+                    ],))
+          )
         ],
       ),
     );
